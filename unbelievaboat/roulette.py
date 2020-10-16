@@ -288,7 +288,7 @@ class Roulette(MixinMeta):
     async def roulette(self, ctx, amount: int, *, bet):
         """Bet on the roulette wheel
         
-        **Bets**
+        __**Bets**__
         **Singles - Any single number. 0-36.**
         Odds: 37:1
         E.g. `!roulette 100 22`
@@ -307,6 +307,7 @@ class Roulette(MixinMeta):
         **Even Odd - Even or Odd.**
         Odds: 1:1
         E.g. `!roulette 100 even`
+        __**You can place multiple bets before the wheel spins!**__
         """
         if ctx.guild.id not in self.roulettegames:
             return await ctx.send(
