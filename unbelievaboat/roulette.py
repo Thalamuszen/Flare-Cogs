@@ -289,22 +289,22 @@ class Roulette(MixinMeta):
         """Bet on the roulette wheel
         
         **Bets**
-        Singles - Any single number. 0-36.
+        **Singles - Any single number. 0-36.**
         Odds: 37:1
         E.g. `!roulette 100 22`
-        Dozens - 1st/2nd/3rd Dozen.
+        **Dozens - 1st/2nd/3rd Dozen.**
         Odds: 2:1
         E.g. `!roulette 100 3rd dozen`
-        Columns - 1st/2nd/3rd Column.
-        Odds: 2:!
+        **Columns - 1st/2nd/3rd Column.**
+        Odds: 2:1
         E.g. `!roulette 100 1st column`
-        Colors - Red/Black.
+        **Colors - Red/Black.**
         Odds: 1:1
         E.g. `!roulette 100 red`
-        Halfs - 1st/2nd half.
+        **Halfs - 1st/2nd half.**
         Odds: 1:1
         E.g. `!roulette 100 2nd half`
-        Even Odd - Even or Odd.
+        **Even Odd - Even or Odd.**
         Odds: 1:1
         E.g. `!roulette 100 even`
         """
