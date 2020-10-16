@@ -362,7 +362,7 @@ class Roulette(MixinMeta):
             await asyncio.sleep(time)
         self.roulettegames[ctx.guild.id]["started"] = True
         emb = discord.Embed(
-            color=discord.Color.red(),
+            color=discord.Colour(0x4fe0e0),
             title="Roulette Wheel",
             description="The wheel begins to spin.",
         )
@@ -372,7 +372,7 @@ class Roulette(MixinMeta):
         payouts = await self.payout(ctx, number, self.roulettegames[ctx.guild.id])
         emoji = EMOJIS[NUMBERS[number]]
         emb = discord.Embed(
-            color=discord.Color.red(),
+            color=discord.Colour(0x4fe0e0),
             title="Roulette Wheel",
             description="The wheel lands on {} {} {}\n\n**Winnings**\n{}".format(
                 NUMBERS[number],
