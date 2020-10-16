@@ -289,13 +289,16 @@ class Roulette(MixinMeta):
         """Bet on the roulette wheel.
 
         **Current supported bets**:
-        Single   - Any single number.
-        Colors   - Red/Black
-        Halfs    - 1st/2nd half
+        Single - Any single number. (0-36)
+        Colors - Red/Black
+        Halfs - 1st/2nd half
         Even Odd - Even or Odd
-        Dozens   - 1st/2nd/3rd Dozen (Groups of 12)
-        Colums   - 1st/2nd/3rd Column.
-        - This is based on the English version of the roulette wheel.
+        Dozens - 1st/2nd/3rd Dozen (Groups of 12)
+        Columns - 1st/2nd/3rd Column.
+        Examples: 
+        `!roulette 100 1st half`
+        `!roulette 500 red`
+        `!roulette 250 2nd column`
         """
         if ctx.guild.id not in self.roulettegames:
             return await ctx.send(
