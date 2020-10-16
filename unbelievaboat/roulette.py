@@ -286,7 +286,9 @@ class Roulette(MixinMeta):
     @commands.guild_only()
     @roulette_disabled_check()
     async def roulette(self, ctx, amount: int, *, bet):
-        """**Bet on the roulette wheel**
+        """Bet on the roulette wheel
+        
+        **Bets**
         Singles - Any single number. 0-36.
         Odds: 37:1
         E.g. `!roulette 100 22`
