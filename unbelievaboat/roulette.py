@@ -286,9 +286,8 @@ class Roulette(MixinMeta):
     @commands.guild_only()
     @roulette_disabled_check()
     async def roulette(self, ctx, amount: int, *, bet):
-        """Bet on the roulette wheel.
+        """**Bet on the roulette wheel**
 
-        **Current supported bets**:
         Single - Any single number. (0-36)
         Colors - Red/Black
         Halfs - 1st/2nd half
