@@ -287,17 +287,24 @@ class Roulette(MixinMeta):
     @roulette_disabled_check()
     async def roulette(self, ctx, amount: int, *, bet):
         """**Bet on the roulette wheel**
-
-        Single - Any single number. (0-36)
-        Colors - Red/Black
-        Halfs - 1st/2nd half
-        Even Odd - Even or Odd
-        Dozens - 1st/2nd/3rd Dozen (Groups of 12)
+        Singles - Any single number. 0-36.
+        Odds: 37:1
+        E.g. `!roulette 100 22`
+        Dozens - 1st/2nd/3rd Dozen.
+        Odds: 2:1
+        E.g. `!roulette 100 3rd dozen`
         Columns - 1st/2nd/3rd Column.
-        Examples: 
-        `!roulette 100 1st half`
-        `!roulette 500 red`
-        `!roulette 250 2nd column`
+        Odds: 2:!
+        E.g. `!roulette 100 1st column`
+        Colors - Red/Black.
+        Odds: 1:1
+        E.g. `!roulette 100 red`
+        Halfs - 1st/2nd half.
+        Odds: 1:1
+        E.g. `!roulette 100 2nd half`
+        Even Odd - Even or Odd.
+        Odds: 1:1
+        E.g. `!roulette 100 even`
         """
         if ctx.guild.id not in self.roulettegames:
             return await ctx.send(
