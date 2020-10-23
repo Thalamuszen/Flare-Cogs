@@ -356,6 +356,7 @@ class Roulette(MixinMeta):
         conf = await self.configglobalcheck(ctx)
         time = await conf.roulette_time()
         embed1 = discord.Embed(title="Elune's Casino | Roulette", description="The roulette wheel will be spun in **{}** seconds.\nType `!r` to see a list of possible bets.\n**Place your bets now!**".format(time), delete_after=time, color=0x4FE0E0)
+        embed1.set_thumbnail(url="https://cdn.discordapp.com/attachments/752998969449382059/769175640938905620/roulette.gif")        
 #        await ctx.send(
 #            "The roulette wheel will be spun in {} seconds.".format(time), delete_after=time
 #        )
