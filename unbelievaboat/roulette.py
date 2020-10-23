@@ -369,7 +369,7 @@ class Roulette(MixinMeta):
             title="Elune's Casino | Roulette",
             description="The wheel begins to spin.",
         )
-        emb.set_thumbnail=(url="https://cdn.discordapp.com/attachments/752998969449382059/769175640938905620/roulette.gif")
+        emb.set_thumbnail(url="https://cdn.discordapp.com/attachments/752998969449382059/769175640938905620/roulette.gif")
         msg = await ctx.send(embed=emb)
         await asyncio.sleep(random.randint(3, 8))
         number = random.randint(0, 36)
