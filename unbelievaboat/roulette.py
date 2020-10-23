@@ -390,6 +390,7 @@ class Roulette(MixinMeta):
                 else "None.",
             ),
         )
+        emb.set_thumbnail(url="https://cdn.discordapp.com/attachments/752998969449382059/769175640938905620/roulette.gif")
         await msg.edit(embed=emb)
         del self.roulettegames[ctx.guild.id]
 
