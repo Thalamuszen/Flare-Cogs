@@ -368,6 +368,7 @@ class Roulette(MixinMeta):
             color=discord.Colour(0x4fe0e0),
             title="Elune's Casino | Roulette",
             description="The wheel begins to spin.",
+            thumbnail="https://cdn.discordapp.com/attachments/752998969449382059/769175640938905620/roulette.gif",
         )
         msg = await ctx.send(embed=emb)
         await asyncio.sleep(random.randint(3, 8))
