@@ -289,24 +289,27 @@ class Roulette(MixinMeta):
         """Bet on the roulette wheel
         
         __**Bets**__
-        **Singles - Any single number. 0-36.**
-        Odds: 37:1
-        E.g. `!roulette 100 22`
+        **Zero - 0.**
+        Odds: 36:1
+        E.g. `!r 100 0`
+        **Singles - Any single number. 1-36.**
+        Odds: 17:1
+        E.g. `!r 100 22`
         **Dozens - 1st/2nd/3rd Dozen.**
         Odds: 2:1
-        E.g. `!roulette 100 3rd dozen`
+        E.g. `!r 100 3rd dozen`
         **Columns - 1st/2nd/3rd Column.**
         Odds: 2:1
-        E.g. `!roulette 100 1st column`
+        E.g. `!r 100 1st column`
         **Colors - Red/Black.**
         Odds: 1:1
-        E.g. `!roulette 100 red`
+        E.g. `!r 100 red`
         **Halfs - 1st/2nd half.**
         Odds: 1:1
-        E.g. `!roulette 100 2nd half`
+        E.g. `!r 100 2nd half`
         **Even Odd - Even or Odd.**
         Odds: 1:1
-        E.g. `!roulette 100 even`
+        E.g. `!r 100 even`
         __**You can place multiple bets before the wheel spins!**__
         """
         if ctx.guild.id not in self.roulettegames:
