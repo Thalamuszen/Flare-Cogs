@@ -355,9 +355,12 @@ class Roulette(MixinMeta):
             return await ctx.send("There is already a roulette game on.")
         conf = await self.configglobalcheck(ctx)
         time = await conf.roulette_time()
-        await ctx.send(
-            "The roulette wheel will be spun in {} seconds.".format(time), delete_after=time
-        )
+        embed1 = discord.Embed(title="Elune's Casino | Roulette", description="The roulette wheel will be spun in {} seconds.".format(time), delete_after=time, color=0x4FE0E0)
+        embed1.set_thumbnail(url="https://cdn.discordapp.com/avatars/751844552670969866/9f035363fa69e094c61c9a33e24d4382.png?size=1024")
+#        await ctx.send(
+#            "The roulette wheel will be spun in {} seconds.".format(time), delete_after=time
+#        )
+        await ctx.send(embed=embed1)
         async with ctx.typing():
             await asyncio.sleep(time)
         self.roulettegames[ctx.guild.id]["started"] = True
