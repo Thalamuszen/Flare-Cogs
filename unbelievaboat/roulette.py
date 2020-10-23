@@ -375,7 +375,7 @@ class Roulette(MixinMeta):
         emoji = EMOJIS[NUMBERS[number]]
         emb = discord.Embed(
             color=discord.Colour(0x4fe0e0),
-            title="Roulette Wheel",
+            title="Elune's Casino | Roulette",
             description="The wheel lands on {} {} {}\n\n**Winnings**\n{}".format(
                 NUMBERS[number],
                 number,
