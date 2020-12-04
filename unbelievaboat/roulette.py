@@ -338,7 +338,22 @@ class Roulette(MixinMeta):
         await ctx.send(
             f"**{ctx.author.display_name}** has placed a {humanize_number(amount)} {await bank.get_currency_name(ctx.guild)} bet on {bet}."
         )
-
+        #Daily cog input.
+        memberdata = await self.bot.get_cog("Daily").config.member(ctx.author).all()
+        gambling = memberdata["gambling"]
+        gambling_count = memberdata["gambling_count"]
+        gambling_quest = memberdata["gambling_quest"]
+        gambling_credits = memberdata["gambling_credits"]
+        #Gambling module quest check/completion
+        await self.bot.get_cog("Daily").config.member(ctx.author).gambling_count.set(gambling_count + 1)
+        gambling_count = gambling_count + 1
+        if gambling_count == gambling_quest:
+            if gambling == False:
+                credits = int(gambling_credits)
+                await bank.deposit_credits(ctx.author, credits)
+                await ctx.send(f"<:Coins:783453482262331393> **| Gambling quest complete!**\n<:Coins:783453482262331393> **| Reward:** {gambling_credits} {gambling_name}")
+            await self.bot.get_cog("Daily").config.member(ctx.author).gambling.set(1)           
+        
     @roulette_disabled_check()
     @roulette.command(name="start")
     async def roulette_start(self, ctx):
