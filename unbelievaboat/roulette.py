@@ -339,6 +339,7 @@ class Roulette(MixinMeta):
             f"**{ctx.author.display_name}** has placed a {humanize_number(amount)} {await bank.get_currency_name(ctx.guild)} bet on {bet}."
         )
         #Daily cog input.
+        credits_name = await bank.get_currency_name(ctx.guild)  
         memberdata = await self.bot.get_cog("Daily").config.member(ctx.author).all()
         gambling = memberdata["gambling"]
         gambling_count = memberdata["gambling_count"]
@@ -351,7 +352,7 @@ class Roulette(MixinMeta):
             if gambling == False:
                 credits = int(gambling_credits)
                 await bank.deposit_credits(ctx.author, credits)
-                await ctx.send(f"<:Coins:783453482262331393> **| Gambling quest complete!**\n<:Coins:783453482262331393> **| Reward:** {gambling_credits} {gambling_name}")
+                await ctx.send(f"<:Coins:783453482262331393> **| Gambling quest complete!**\n<:Coins:783453482262331393> **| Reward:** {gambling_credits} {credits_name}")
             await self.bot.get_cog("Daily").config.member(ctx.author).gambling.set(1)           
         
     @roulette_disabled_check()
